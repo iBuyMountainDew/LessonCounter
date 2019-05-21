@@ -16,6 +16,7 @@
   
 <p id="tute"></p>
 <h3 id="french"></h3>
+<h4 id="ynysgol"></h4>
 
 <script>
 // Set the date we're counting down to
@@ -30,8 +31,6 @@ var x = setInterval(function() {
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
-  
-  var frenchToGo = 11;
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -43,25 +42,29 @@ var x = setInterval(function() {
   document.getElementById("tute").innerHTML = "Time Until The End: " + days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
-  // If the count down is finished, write some text 
+  // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("tute").innerHTML = "School Is Over. It's Been A Good Run...";
   }
-  
-  
-    
-    var firstFrench = new Date("May 21, 2019 13:51:00").getTime();
-    var secondFrench = new Date("May 29, 2019 09:30:00").getTime();
-    var thirdFrench = new Date("May ");
-    
-    if(now === firstFrench || now === secondFrench) {
-      frenchToGo -= 1;
-    }
-    
-    document.getElementById("french").innerHTML = "French Lessons Remaining: " + frenchToGo;
  
 }, 1000);
+
+var now = new Date().getHours();
+
+var eightOrGloch = new Date("May 22, 2019 08:00:00").getHours();
+var threeOrGloch = new Date("May 22, 2019 14:40:00").getHours();
+
+var distanceToEight = eightOrGloch - now;
+var distanceToThree = threeOrGloch - now;
+
+if (now >= eightOrGloch && now < threeOrGloch) {
+  document.getElementById("ynysgol").innerHTML = "Are We In Ysgol? Yes";
+} else if (now <= eightOrGloch || now >= threeOrGloch) {
+  document.getElementById("ynysgol").innerHTML = "Are We In Ysgol? No";
+} else {
+  document.getElementById("ynysgol").innerHTML = "Are We In Ysgol? REEEEEEEEEEEEEEEEE IDK FFS ASK THE SMART KIDDOS AAAAAAA";
+}
 </script>
   
   
