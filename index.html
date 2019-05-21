@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson Counter - Y9</title>
+  
+  
+  
+  
+  
+</head>
+
+<body>
+
+  
+<p id="tute"></p>
+<h3 id="french"></h3>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("July 19, 2019 12:00:00").getTime();
+
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  
+  var frenchToGo = 11;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("tute").innerHTML = "Time Until The End: " + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("tute").innerHTML = "School Is Over. It's Been A Good Run...";
+  }
+  
+  
+    
+    var firstFrench = new Date("May 21, 2019 13:51:00").getTime();
+    var secondFrench = new Date("May 29, 2019 09:30:00").getTime();
+    var thirdFrench = new Date("May ");
+    
+    if(now === firstFrench || now === secondFrench) {
+      frenchToGo -= 1;
+    }
+    
+    document.getElementById("french").innerHTML = "French Remaining: " + frenchToGo;
+ 
+}, 1000);
+</script>
+  
+  
+
+</body>
+
+</html>
